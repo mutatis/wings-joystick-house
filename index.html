@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+	
+		<title>
+		
+			Atira
+		
+		</title>
+		<script src = "js/botao.js"></script>
+		<script src = "js/sceneintro.js"></script>
+		<script src = "js/credito.js"></script>
+		<script src = "js/fundo.js"></script>
+		<script src = "js/level.js"></script>		
+		<script src = "js/tutorial.js"></script>
+		<script src = "js/Alvo.js"></script>
+		<script src = "js/fundo_mexeu.js"></script>
+		<script src = "js/aviao.js"></script>
+		
+		<body>
+		
+			
+			
+			<canvas width="800" height="600" id="main" style="border:1px solid #000000;">
+			
+			</canvas>
+			
+			<script>
+			
+				var canvas = document.getElementById("main");
+				var screen = canvas.getContext("2d");
+				
+				SCREEN_WIDTH = 600;
+
+				SCREEN_HEIGHT = 960;
+
+				var intro = new SCENEIntro();
+
+				var credits = new SceneCredits();
+
+				var level01 = new SceneLevel();
+
+				var tuto = new SceneTutorial();
+
+				var SCENES = { INTRO: 0, CREDITS: 1, LEVEL01: 2 , TUTORIAL: 3}
+
+				var currentScene = SCENES.LEVEL01;
+				
+				var tempoSeg = 0
+
+				setInterval(contarSegundo, 1000)
+
+				Load();
+				
+				function contarSegundo()
+				{
+
+					tempoSeg++
+
+				}	
+
+				function Load()
+				{//abre Load
+
+					Loop();
+
+				}//fecha Load
+
+				function clear()
+				{//abre clear
+
+					screen.clearRect(0, 0, 600, 960);
+
+				}//fecha clear
+
+				function Update()
+				{//abre Update
+
+					switch(currentScene)
+					{
+					case SCENES.INTRO:
+					{
+						intro.update();	
+					}
+					break;
+				
+					case SCENES.CREDITS:
+					{
+						credits.update();
+					}
+					break;
+
+					case SCENES.LEVEL01:
+					{
+						level01.update();
+					}
+					break;
+
+					case SCENES.TUTORIAL:
+					{
+						tuto.update();
+					}
+					break
+					}	
+
+				}//fecha Update
+
+				function Draw()
+				{//abre draw
+
+					clear()
+
+					switch(currentScene)
+					{
+						case SCENES.INTRO:
+						{
+							intro.draw();
+						}
+						break;
+
+						case SCENES.CREDITS:
+						{
+							credits.draw();
+						}
+						break;
+
+						case SCENES.LEVEL01:
+						{
+							level01.draw();
+						}
+						break;
+							
+						case SCENES.TUTORIAL:
+						{
+							tuto.draw();
+						}
+						break
+
+					}
+
+				}//fecha draw
+
+				function Loop()
+				{//abre Loop
+
+					Update();
+
+					Draw();
+
+					setTimeout(Loop, 30);
+
+				}//fecha Loop
+
+				function mouse_move(mouse)
+				{
+
+				}
+
+				function mouse_up(mouse)
+				{
+
+				}
+
+				function mouse_down(mouse)
+				{
+
+					console.log("mous x " + mouse.x, "mouse y " + mouse.y)	
+
+					switch(currentScene)
+					{
+						case SCENES.INTRO:
+						{
+							intro.mouse_down(mouse);
+						}
+						break;
+
+						case SCENES.CREDITS:
+						{
+							credits.mouse_down(mouse);
+						}
+						break;
+
+						case SCENES.LEVEL01:
+						{
+							level01.mouse_down(mouse);
+						}
+						break;
+
+						case SCENES.TUTORIAL:
+						{
+							tuto.mouse_down(mouse);
+						}
+						break
+
+					}
+				}
+
+
+				function Collide(x1, y1, w1, h1, x2, y2, w2, h2)
+				{//abre Collide
+					if((x1+w1<x2)//se rect1 esquerda rect2
+					||(x1>x2+w2)//se rect1 direita rect2
+					||(y1+h1<y2)//se rect1 acima rect2
+					||(y1>y2+h2))//se rect1 abaixo rect2
+					{//abre if
+						return false;//nao colidiu
+					}//fecha if
+					else
+					{//abre else
+						return true;//colidiu
+					}//fecha else
+				}//fecha Collide
+window.addEventListener('mousedown', mouse_down, true);
+	
+			</script>
+		
+		</body>
+	
+	</head>
+
+</html>
