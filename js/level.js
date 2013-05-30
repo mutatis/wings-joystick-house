@@ -7,6 +7,7 @@ function SceneLevel()
 	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
 	this.roda = new Aviao ("imgs/roda.png", 107, 112, 130, 507);
+	this.roda2 = new Radar("imgs/radar.png", 183, 182, 200, 200);
   
 	this.update=function()
 	{//abre update
@@ -25,6 +26,7 @@ function SceneLevel()
 		this.alvo2.Draw();
 		this.fundo2.draw();
 		this.roda.draw();
+		this.roda2.draw();
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#ffffff";
 		screen.fillText( this.alvo1.pontos + this.alvo2.pontos, 670, 550);
