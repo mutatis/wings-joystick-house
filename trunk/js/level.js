@@ -1,12 +1,12 @@
 function SceneLevel()
 {//abre level
 
-	this.alvo1 = new Alvos("aviao.png", 215, 50);
-	this.alvo2 = new Alvos("aviao.png", 215, 50);
-	this.fundo1 = new Fundo_move("background.png")
-	this.fundo2 = new Fundo("tela_controler.png", 0, 0)
-	this.fundo3 = new Fundo("terra.png", 0, 0)
-	this.roda = new Aviao ("roda.png", 107, 112, 130, 507);
+	this.alvo1 = new Alvos("imgs/aviao.png", 215, 50);
+	this.alvo2 = new Alvos("imgs/aviao.png", 215, 50);
+	this.fundo1 = new Fundo_move("imgs/background.png")
+	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
+	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
+	this.roda = new Aviao ("imgs/roda.png", 107, 112, 130, 507);
   
 	this.update=function()
 	{//abre update
