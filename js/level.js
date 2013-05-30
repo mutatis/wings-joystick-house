@@ -7,7 +7,7 @@ function SceneLevel()
 	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
 	this.roda = new Aviao ("imgs/roda.png", 107, 112, 142, 507);
-	this.roda2 = new Radar("imgs/radar.png", 183, 182, 0, 440);
+	this.roda2 = new Radar("imgs/radar.png", 183, 182, 1, 441);
   
 	this.update=function()
 	{//abre update
