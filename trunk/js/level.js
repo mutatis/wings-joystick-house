@@ -35,7 +35,12 @@ function SceneLevel()
 		screen.fillText( this.alvo1.pontos + this.alvo2.pontos, 670, 550);
 
 	};//fecha draw
-  
+	
+	this.mouse_move=function(mouse)
+	{
+		this.mira.mouse_move(mouse);
+		console.log("aaa")
+	}
   
 	this.mouse_down=function(mouse)
 	{//abre mouse down
@@ -44,8 +49,7 @@ function SceneLevel()
 		this.alvo2.mouse_down(mouse);
 		 
 	};//fecha mouse down
-  
-  
+	  
 	this.key_down=function(key)
 	{//abre key down
     
