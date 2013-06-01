@@ -19,6 +19,7 @@
 		<script src = "js/fundo_mexeu.js"></script>
 		<script src = "js/aviao.js"></script>
 		<script src = "js/radar.js"></script>
+		<script src = "js/mira.js"></script>
 		
 		<body>
 		
@@ -54,6 +55,13 @@
 				setInterval(contarSegundo, 1000)
 
 				Load();
+				
+				window.onmousemove = mousemoved;
+
+				function mousemoved()
+				{
+					
+				}
 				
 				function contarSegundo()
 				{
@@ -213,7 +221,10 @@
 						return true;//colidiu
 					}//fecha else
 				}//fecha Collide
+				
 window.addEventListener('mousedown', mouse_down, true);
+window.addEventListener('mousemove', mouse_move, true);
+
 	
 			</script>
 		

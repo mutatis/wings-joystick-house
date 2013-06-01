@@ -8,6 +8,7 @@ function SceneLevel()
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
 	this.roda = new Aviao ("imgs/roda.png", 107, 112, 142, 507);
 	this.roda2 = new Radar("imgs/radar.png", 183, 182, 1, 441);
+	this.mira = new Mira("imgs/alvo_mouse.png")
   
 	this.update=function()
 	{//abre update
@@ -15,6 +16,7 @@ function SceneLevel()
 		this.alvo1.Update();
 		this.alvo2.Update();
 		this.fundo1.update();
+		this.mira.update();
 	};//fecha update
   
 	this.draw = function()
@@ -24,6 +26,7 @@ function SceneLevel()
 		this.fundo3.draw();
 		this.alvo1.Draw();
 		this.alvo2.Draw();
+		this.mira.draw();
 		this.fundo2.draw();
 		this.roda.draw();
 		this.roda2.draw();
