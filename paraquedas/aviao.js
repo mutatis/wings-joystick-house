@@ -1,3 +1,4 @@
+
 function Aviao(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 {//abre 
 
@@ -11,22 +12,22 @@ function Aviao(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.posicao_x_dst = posicao_x;
         this.posicao_y_dst = posicao_y;
         
-        this.scale_x = 0.3;
-        this.scale_y = 0.3;
+        this.scale_x = 0.5;
+        this.scale_y = 0.5;
         
         this.tamanho_w_src = tamanho_w;
         this.tamanho_h_src = tamanho_h;
         
-        this.tamanho_w_dst = 307;
-        this.tamanho_h_dst = 312;
+        this.tamanho_w_dst = 300;
+        this.tamanho_h_dst = 300;
         
         this.posicao_x_src = 0;
         this.posicao_y_src = 0;
         
         this.current_frame = 0;
-        this.frames = 14;
+        this.frames = 4;
         
-        this.fps = 17;//frames por segundo
+        this.fps = 1;//frames por segundo
         this.time_per_frame = 1000/this.fps;
         this.setFPS = function(newFPS)
         {//abre setFPS
