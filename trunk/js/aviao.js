@@ -26,7 +26,7 @@ function Aviao(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.current_frame = 0;
         this.frames = 14;
         
-        this.fps = 17;//frames por segundo
+        this.fps = 14;//frames por segundo
         this.time_per_frame = 1000/this.fps;
         this.setFPS = function(newFPS)
         {//abre setFPS
