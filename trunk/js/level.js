@@ -9,6 +9,7 @@ function SceneLevel()
 	this.roda = new Aviao ("imgs/roda.png", 107, 112, 142, 507);
 	this.roda2 = new Radar("imgs/radar.png", 183, 182, 1, 441);
 	this.mira = new Mira("imgs/alvo_mouse.png")
+	this.tiro = new Tela_tiro("imgs/tela.png", 800, 600, 0, 0)
   
 	this.update=function()
 	{//abre update
@@ -33,6 +34,7 @@ function SceneLevel()
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#ffffff";
 		screen.fillText( this.alvo1.pontos + this.alvo2.pontos, 670, 550);
+		this.tiro.draw();
 
 	};//fecha draw
 	
