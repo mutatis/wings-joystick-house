@@ -21,8 +21,7 @@ function Mira(file)
 	
 	this.update = function()
 	{
-		console.log("porra")
-				
+		console.log("porra")	
 	}
 
 	this.draw = function()
@@ -34,8 +33,8 @@ function Mira(file)
 	
 	this.mouse_move = function(mouse)
 	{
-		this.posicao_x = mouse.x-49;
-		this.posicao_y = mouse.y-49;
+		this.posicao_x = mouse.x-50;
+		this.posicao_y = mouse.y-50;
 	}
 
 }
