@@ -1,4 +1,3 @@
-
 function Aviao(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 {//abre 
 
