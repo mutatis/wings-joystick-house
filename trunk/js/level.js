@@ -43,9 +43,6 @@ function SceneLevel()
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#ffffff";
 		screen.fillText( this.alvo1.pontos + this.alvo2.pontos, 670, 550);
-		screen.font = "50px Comic Sans MS";
-		screen.fillStyle = "#ffffff";
-		screen.fillText("Vida: " + this.vida, 0, 100);
 		if((this.alvo1.clico == false) && (this.alvo1.visivel == false))
 		{
 			this.vida += -1;
