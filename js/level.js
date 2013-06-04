@@ -43,9 +43,23 @@ function SceneLevel()
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#ffffff";
 		screen.fillText( this.alvo1.pontos + this.alvo2.pontos, 670, 550);
-		if((tempoSeg == this.alvo1.tempo_visto) || (tempoSeg == this.alvo2.tempo_visto) || (tempoSeg == this.alvo3.tempo_visto))
+		screen.font = "50px Comic Sans MS";
+		screen.fillStyle = "#ffffff";
+		screen.fillText("Vida: " + this.vida, 0, 100);
+		if((this.alvo1.clico == false) && (this.alvo1.visivel == false))
 		{
-			this.vida += -1;	
+			this.vida += -1;
+			this.alvo1.clico = true;			
+		}
+		else if ((this.alvo2.clico == false) && (this.alvo2.visivel == false))
+		{
+			this.vida += -1;
+			this.alvo2.clico = true;
+		}
+		else if((this.alvo3.clico == false) && (this.alvo3.visivel == false))
+		{
+			this.vida += -1;
+			this.alvo3.clico = true;
 		}
 		if(this.vida == 5)
 		{

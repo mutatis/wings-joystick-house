@@ -13,15 +13,17 @@ function Alvos(file, tam_w, tam_h)
 	this.tempo_visto = 100;
 	this.tempo_apagado = 100;
 	this.pontos = 0;
+	this.clicou = false;
 	
 	this.Update=function()
-	{
+	{	
 		if(tempoSeg > this.tempo_apagado)
 		{
 			this.visivel = true;
 			this.tempo_visto = tempoSeg + Math.floor((Math.random()*100+50));
 			this.tempo_apagado = tempoSeg + Math.floor((Math.random()*150+101));
-		} 
+			this.clico = false;
+		}
 		if (tempoSeg > this.tempo_visto)
 		{
 			this.visivel = false;
@@ -43,12 +45,13 @@ function Alvos(file, tam_w, tam_h)
 	this.mouse_down = function(mouse)
 	{
 	
-	if(Collide(mouse.x-10, mouse.y-11, 1, 1, this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h))	
+		if(Collide(mouse.x-10, mouse.y-11, 1, 1, this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h))	
 		{	
 			if(this.visivel) 
 			{
 				this.pontos+=10;
 				this.visivel = false;
+				this.clico = true;
 			}
 		}	
 	}
