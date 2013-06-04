@@ -42,7 +42,7 @@ function SceneLevel()
 		this.roda2.draw();
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#ffffff";
-		screen.fillText( this.alvo1.pontos + this.alvo2.pontos, 670, 550);
+		screen.fillText( this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 670, 550);
 		if((this.alvo1.clico == false) && (this.alvo1.visivel == false))
 		{
 			this.vida += -1;
