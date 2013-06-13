@@ -1,7 +1,7 @@
 function SCENEIntro()
 {//abre SCENEIntro
 
-	this.fundo_intro = new Fundo("imgs/capa_intro.png", 0, 0);
+	this.fundo_intro = new Fundo("imgs/capa_menu.png", 0, 0);
 	this.play = new Botao("imgs/play.png", 200, 100, 300, 400);
 	
 	this.update = function()
