@@ -35,6 +35,7 @@ function Mira(file)
 	{
 		this.posicao_x = mouse.x-50;
 		this.posicao_y = mouse.y-50;
+		mouse.visibility = false;
 	}
 
 }

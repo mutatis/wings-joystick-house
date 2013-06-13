@@ -15,7 +15,7 @@ function SceneLevel()
 	this.tiro3 = new Tela_tiro("imgs/tiro3.png", 800, 600, 0, 0);
 	this.tiro4 = new Tela_tiro("imgs/tiro4.png", 800, 600, 0, 0);
 	this.tiro5 = new Tela_tiro("imgs/tiro5.png", 800, 600, 0, 0);
-  	this.vida = 7;
+  	this.vida = 6;
   
 	this.update=function()
 	{//abre update
@@ -42,7 +42,7 @@ function SceneLevel()
 		this.roda2.draw();
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#ffffff";
-		screen.fillText( this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 670, 550);
+		screen.fillText( this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 640, 540);
 		if((this.alvo1.clico == false) && (this.alvo1.visivel == false))
 		{
 			this.vida += -1;
