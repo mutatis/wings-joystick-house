@@ -62,7 +62,7 @@ function Botao(file, tam_w, tam_h, pos_x, pos_y)
 	this.clicado = function(mouse)
 	{//abre botao clicado
 
-		if(Collide(mouse.x-10, mouse.y-30, 1, 1,
+		if(Collide(mouse.x-10, mouse.y-12, 1, 1,
 		this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h))
 		{
 
