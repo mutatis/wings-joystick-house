@@ -1,5 +1,9 @@
 function SCENEIntro()
 {//abre SCENEIntro
+
+	this.fundo_intro = new Fundo("imgs/capa_intro.png", 0, 0);
+	this.play = new Botao("imgs/play.png", 200, 100, 300, 400);
+	
 	this.update = function()
 	{//abre update
 
@@ -9,36 +13,20 @@ function SCENEIntro()
 	this.draw = function()
 	{//abre draw
 
-		screen.font = "20px Comic Sans MS";
-		screen.fillStyle = "#000000";
-		screen.fillText("INTRO", 20, 20);
-
+		this.fundo_intro.draw();
+		this.play.draw();
+	
 	}//fecha draw
 
 	this.mouse_down = function(mouse)
 	{//abre mouse down
 
-		if(this.botao_cred.clicado(mouse))
-		{//abre if
-
-			currentScene = SCENES.CREDITS;
-
-		}//fecha if
-
-		if(this.botao_play.clicado(mouse))
+		if(this.play.clicado(mouse))
 		{//abre if
 
 			currentScene = SCENES.LEVEL01;
 
 		}//fecha if
-
-		if(this.botao_tuto.clicado(mouse))
-		{//abre if
-
-			currentScene = SCENES.TUTORIAL;
-
-		}//fecha if
-
 
 	}//fecha mouse down
 
