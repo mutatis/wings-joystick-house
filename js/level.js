@@ -7,8 +7,8 @@ function SceneLevel()
 	this.fundo1 = new Fundo_move("imgs/background.png")
 	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
-	this.roda = new Aviao ("imgs/roda.png", 107, 112, 142, 507);
-	this.roda2 = new Radar("imgs/radar.png", 183, 182, 1, 441);
+	this.roda = new Aviao ("imgs/roda.png", 107, 112, 155, 490);
+	this.roda2 = new Radar("imgs/radar.png", 183, 182, 14, 427);
 	this.mira = new Mira("imgs/alvo_mouse.png");
 	this.tiro1 = new Tela_tiro("imgs/tela.png", 800, 600, 0, 0);
 	this.tiro2 = new Tela_tiro("imgs/tiro2.png", 800, 600, 0, 0);
@@ -41,8 +41,8 @@ function SceneLevel()
 		this.roda.draw();
 		this.roda2.draw();
 		screen.font = "50px Comic Sans MS";
-		screen.fillStyle = "#ffffff";
-		screen.fillText( this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 640, 540);
+		screen.fillStyle = "#000000";
+		screen.fillText( this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);
 		if((this.alvo1.clico == false) && (this.alvo1.visivel == false))
 		{
 			this.vida += -1;
