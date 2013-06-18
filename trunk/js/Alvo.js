@@ -8,8 +8,8 @@ function Alvos(file, tam_w, tam_h)
 	this.tamanho_w = tam_w;
 	this.tamanho_h = tam_h;
 
-	this.posicao_x = Math.floor((Math.random()*(737-this.tamanho_w)+1));
-	this.posicao_y = Math.floor((Math.random()*(450-this.tamanho_w)+1));
+	this.posicao_x = Math.floor((Math.random()*(800-this.tamanho_w)+1));
+	this.posicao_y = Math.floor((Math.random()*(400-this.tamanho_w)+1));
 	this.tempo_visto = 100;
 	this.tempo_apagado = 100;
 	this.pontos = 0;
@@ -28,7 +28,7 @@ function Alvos(file, tam_w, tam_h)
 		{
 			this.visivel = false;
 			this.posicao_x = Math.floor((Math.random()*(800-this.tamanho_w))+1);
-			this.posicao_y = Math.floor((Math.random()*(450-this.tamanho_h))+1);
+			this.posicao_y = Math.floor((Math.random()*(400-this.tamanho_h))+1);
 		}		
 	}
 	
