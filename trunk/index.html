@@ -21,6 +21,8 @@
 		<script src = "js/radar.js"></script>
 		<script src = "js/mira.js"></script>
 		<script src = "js/tela_tiro.js"></script>
+		<script src = "js/end.js"></script>
+		<script src = "js/end1.js"></script>
 		
 		<body>
 		
@@ -46,8 +48,12 @@
 				var level01 = new SceneLevel();
 
 				var tuto = new SceneTutorial();
+				
+				var end = new End;
+				
+				var end_1 = new End1;
 
-				var SCENES = { INTRO: 0, CREDITS: 1, LEVEL01: 2 , TUTORIAL: 3}
+				var SCENES = { INTRO: 0, CREDITS: 1, LEVEL01: 2 , TUTORIAL: 3, END : 4, END1: 5}
 
 				var currentScene = SCENES.INTRO;
 				
@@ -112,7 +118,20 @@
 					{
 						tuto.update();
 					}
-					break
+					break;
+					
+					case SCENES.END:
+					{
+						end.update();
+					}
+					break;
+					
+					case SCENES.END1:
+					{
+						end_1.update();
+					}
+					break;
+					
 					}	
 
 				}//fecha Update
@@ -146,7 +165,19 @@
 						{
 							tuto.draw();
 						}
-						break
+						break;
+						
+						case SCENES.END:
+						{
+							end.draw();
+						}
+						break;
+						
+						case SCENES.END1:
+						{
+							end_1.draw();
+						}
+						break;
 
 					}
 

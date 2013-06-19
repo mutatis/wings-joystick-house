@@ -42,7 +42,7 @@ function SceneLevel()
 		this.roda2.draw();
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#000000";
-		screen.fillText( this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);
+		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);
 		if((this.alvo1.clico == false) && (this.alvo1.visivel == false))
 		{
 			this.vida += -1;
@@ -77,6 +77,23 @@ function SceneLevel()
 		if(this.vida == 1)
 		{
 			this.tiro5.draw()	
+		}
+		if(this.vida <= 0)
+		{
+			currentScene = SCENES.END;
+			currentScene = SCENES.END1;
+			this.alvo1.pontos = 0; 
+			this.alvo2.pontos = 0;
+			this.alvo3.pontos = 0;
+			this.vida = 6;
+		}
+		if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos >= 100)
+		{
+			currentScene = SCENES.END1;
+			this.alvo1.pontos = 0; 
+			this.alvo2.pontos = 0;
+			this.alvo3.pontos = 0;
+			this.vida = 6;
 		}
 		
 	};//fecha draw
