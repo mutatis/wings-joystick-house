@@ -81,7 +81,6 @@ function SceneLevel()
 		if(this.vida <= 0)
 		{
 			currentScene = SCENES.END;
-			currentScene = SCENES.END1;
 			this.alvo1.pontos = 0; 
 			this.alvo2.pontos = 0;
 			this.alvo3.pontos = 0;
