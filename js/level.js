@@ -1,9 +1,9 @@
 function SceneLevel()
 {//abre level
 
-	this.alvo1 = new Alvos("imgs/aviao.png", 215, 50);
-	this.alvo2 = new Alvos("imgs/aviao.png", 215, 50);
-	this.alvo3 = new Alvos("imgs/aviao.png", 215, 50);
+	this.alvo1 = new Alvos("imgs/alvo.png", 430, 101);
+	this.alvo2 = new Alvos("imgs/alvo.png", 430, 101);
+	this.alvo3 = new Alvos("imgs/alvo.png", 430, 101);
 	this.fundo1 = new Fundo_move("imgs/background.png")
 	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
@@ -43,17 +43,17 @@ function SceneLevel()
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#000000";
 		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);
-		if((this.alvo1.clico == false) && (this.alvo1.visivel == false))
+		if((this.alvo1.clico == false) && (this.alvo1.visible == false))
 		{
 			this.vida += -1;
 			this.alvo1.clico = true;			
 		}
-		else if ((this.alvo2.clico == false) && (this.alvo2.visivel == false))
+		else if ((this.alvo2.clico == false) && (this.alvo2.visible == false))
 		{
 			this.vida += -1;
 			this.alvo2.clico = true;
 		}
-		else if((this.alvo3.clico == false) && (this.alvo3.visivel == false))
+		else if((this.alvo3.clico == false) && (this.alvo3.visible == false))
 		{
 			this.vida += -1;
 			this.alvo3.clico = true;
