@@ -15,6 +15,8 @@ function SceneLevel()
 	this.tiro3 = new Tela_tiro("imgs/tiro3.png", 800, 600, 0, 0);
 	this.tiro4 = new Tela_tiro("imgs/tiro4.png", 800, 600, 0, 0);
 	this.tiro5 = new Tela_tiro("imgs/tiro5.png", 800, 600, 0, 0);
+	this.jh = new Botao("imgs/jh.png", 193, 62, 11, 1);
+	this.nw = new Botao("imgs/nw.png", 184, 64, 208, 1);
   	this.vida = 6;
   
 	this.update=function()
@@ -40,6 +42,8 @@ function SceneLevel()
 		this.fundo2.draw();
 		this.roda.draw();
 		this.roda2.draw();
+		this.jh.draw();
+		this.nw.draw();
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#000000";
 		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);
@@ -108,6 +112,16 @@ function SceneLevel()
 		this.alvo1.mouse_down(mouse);
 		this.alvo2.mouse_down(mouse);
 		this.alvo3.mouse_down(mouse);
+		
+		if(this.jh.clicado(mouse))
+		{
+			window.open("http://www.facebook.com/JoystickHouse");
+		}
+		
+		if(this.nw.clicado(mouse))
+		{
+			window.open("http://nwdesign.com.br");
+		}
 		 
 	};//fecha mouse down
 	  

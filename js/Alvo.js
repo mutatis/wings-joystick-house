@@ -33,7 +33,7 @@ function Alvos(file, tamanho_w, tamanho_h)
         this.current_frame = 0;
         this.frames = 8;
         
-        this.fps = 8;//frames por segundo
+        this.fps = 16;//frames por segundo
         this.time_per_frame = 1000/this.fps;
         this.setFPS = function(newFPS)
         {//abre setFPS
