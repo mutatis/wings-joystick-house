@@ -1,41 +1,37 @@
-function Alvos(file, tamanho_w, tamanho_h)
+function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 {//abre 
-
-		this.para1 = new Paraquedas("imgs/para_quedas.png", 100, 100, 0, 0);
 
         this.img = new Image();
         this.img.src = file;
         
-        this.visible = true;
+        this.visible = false;
 		
-		this.posicao_x = Math.floor((Math.random()*(800-tamanho_w)+1));
-		this.posicao_y = Math.floor((Math.random()*(400-tamanho_h)+50));
-		this.tempo_visto = 100;
-		this.tempo_apagado = 100;
-		
-		this.pontos = 0;
+		//this.pontos = pontos;
         
-        this.posicao_x_dst = this.posicao_x;
-        this.posicao_y_dst = this.posicao_y;
+        this.posicao_x_dst = posicao_x;
+        this.posicao_y_dst = posicao_y;
         
-        this.scale_x = 0.4;
-        this.scale_y = 0.4;
+        this.scale_x = 0.3;
+        this.scale_y = 0.3;
         
         this.tamanho_w_src = tamanho_w;
         this.tamanho_h_src = tamanho_h;
         
-        this.tamanho_w_dst = this.tamanho_w_src;
-        this.tamanho_h_dst = this.tamanho_h_src;
+        this.tamanho_w_dst = 300;
+        this.tamanho_h_dst = 300;
+		
+		this.clico = false;
+		
+		this.velocidade_x = 5;
+		this.velocidade_y = 1;
         
         this.posicao_x_src = 0;
         this.posicao_y_src = 0;
-		
-		this.clico = false;
         
         this.current_frame = 0;
-        this.frames = 8;
+        this.frames = 4;
         
-        this.fps = 16;//frames por segundo
+        this.fps = 5;//frames por segundo
         this.time_per_frame = 1000/this.fps;
         this.setFPS = function(newFPS)
         {//abre setFPS
@@ -49,36 +45,28 @@ function Alvos(file, tamanho_w, tamanho_h)
         this.acumulated_delta_time = 0
         this.last_draw_time = 0;
         
-        this.Update = function()
+        this.update = function()
         {//abre update
-		
-			this.para1.update();
-		
-		if(tempoSeg > this.tempo_apagado)
-		{
-			this.visible = true;
-			this.tempo_visto = tempoSeg + Math.floor((Math.random()*100+50));
-			this.tempo_apagado = tempoSeg + Math.floor((Math.random()*150+101));
-			this.clico = false;
-		} 
-		if (tempoSeg > this.tempo_visto)
-		{
-			this.visible = false;
-			this.posicao_x_dst = Math.floor((Math.random()*(800-this.tamanho_w_dst))+1);
-			this.posicao_y_dst = Math.floor((Math.random()*(400-this.tamanho_h_dst))+50);
-		}		
+			
+			if(this.visible == true)
+			{
+				this.posicao_y_dst += this.velocidade_y
+			}
+			
+			if(this.posicao_x_dst >= SCREEN_HEIGHT)
+			{
+				this.visible = false;
+			}
                 
         }//fecha update
         
-        this.Draw = function()//funcao desenhar (draw)
+        this.draw = function()//funcao desenhar (draw)
         {//abre draw
                 
                 
                 //console.log("oioio");
                 
-                if(this.visible == true)
-				{
-               // console.log("oioio");
+                if(this.visible)
                 screen.drawImage(this.img,
                                         this.tamanho_w_src*this.current_frame,
                                         this.posicao_y_src,
@@ -112,29 +100,21 @@ function Alvos(file, tamanho_w, tamanho_h)
                 }//fecha if
                 
                 this.last_draw_time = Date.now();
-				}
-				
-				this.para1.draw();
                 
         }//fecha draw
 		
 		this.mouse_down = function(mouse)
 		{
-			this.para1.mouse_down(mouse);
+	
 			if(Collide(mouse.x-10, mouse.y-11, 1, 1, this.posicao_x_dst, this.posicao_y_dst, this.tamanho_w_dst*this.scale_x, this.tamanho_h_dst*this.scale_y))	
 			{	
 				if(this.visible) 
 				{
-					this.pontos+=10;
 					this.visible = false;
 					this.clico = true;
-					this.para1.posicao_x_dst = this.posicao_x_dst;
-					this.para1.posicao_y_dst = this.posicao_y_dst;
-					this.para1.visible = true;
 				}
-				
 			}
-			
+	
 		}
         
 }//fecha 
