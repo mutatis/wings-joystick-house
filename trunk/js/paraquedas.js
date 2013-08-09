@@ -11,8 +11,8 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.posicao_x_dst = posicao_x;
         this.posicao_y_dst = posicao_y;
         
-        this.scale_x = 0.3;
-        this.scale_y = 0.3;
+        this.scale_x = 0.2;
+        this.scale_y = 0.2;
         
         this.tamanho_w_src = tamanho_w;
         this.tamanho_h_src = tamanho_h;
@@ -23,7 +23,7 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 		this.clico = false;
 		
 		this.velocidade_x = 5;
-		this.velocidade_y = 1.5;
+		this.velocidade_y = 2;
         
         this.posicao_x_src = 0;
         this.posicao_y_src = 0;
@@ -31,7 +31,7 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.current_frame = 0;
         this.frames = 4;
         
-        this.fps = 5;//frames por segundo
+        this.fps = 8;//frames por segundo
         this.time_per_frame = 1000/this.fps;
         this.setFPS = function(newFPS)
         {//abre setFPS
