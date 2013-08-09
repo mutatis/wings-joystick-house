@@ -27,7 +27,7 @@ function SceneLevel()
 		this.alvo3.Update();
 		this.fundo1.update();
 		this.mira.update();
-		
+			
 	};//fecha update
   
 	this.draw = function()
@@ -52,12 +52,14 @@ function SceneLevel()
 			this.vida += -1;
 			this.alvo1.clico = true;			
 		}
-		else if ((this.alvo2.clico == false) && (this.alvo2.visible == false))
+		
+		if ((this.alvo2.clico == false) && (this.alvo2.visible == false))
 		{
 			this.vida += -1;
 			this.alvo2.clico = true;
 		}
-		else if((this.alvo3.clico == false) && (this.alvo3.visible == false))
+		
+		if((this.alvo3.clico == false) && (this.alvo3.visible == false))
 		{
 			this.vida += -1;
 			this.alvo3.clico = true;
