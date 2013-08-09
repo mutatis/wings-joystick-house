@@ -23,7 +23,7 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 		this.clico = false;
 		
 		this.velocidade_x = 5;
-		this.velocidade_y = 1;
+		this.velocidade_y = 1.5;
         
         this.posicao_x_src = 0;
         this.posicao_y_src = 0;
