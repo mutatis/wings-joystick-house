@@ -17,7 +17,7 @@ function Fundo_move(file)
     this.position_x = 0;
     this.position_y = 0;
     this.velocity_x = 0;
-    this.velocity_y = 2;
+    this.velocity_y = -2;
     this.velocity_MAX = 15;
     
     this.update=function()
@@ -27,9 +27,9 @@ function Fundo_move(file)
     	
     	this.position_y += this.velocity_y;
     	
-    	if(this.position_y >= 0)
+    	if(this.position_y <= -600)
     	{
-    		this.position_y = SCREEN_HEIGHT - this.size_y;
+    		this.position_y = 0;
     	}
     	
     };
