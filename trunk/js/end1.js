@@ -27,6 +27,8 @@ function End1(){
 		{
 			window.open("http://nwdesign.com.br");
 		}
+		
+		currentScene = SCENES.LEVEL02;
 
 	}//fecha mouse down
 

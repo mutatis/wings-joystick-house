@@ -14,6 +14,7 @@
 		<script src = "js/credito.js"></script>
 		<script src = "js/fundo.js"></script>
 		<script src = "js/level.js"></script>		
+		<script src = "js/level2.js"></script>		
 		<script src = "js/tutorial.js"></script>
 		<script src = "js/Alvo.js"></script>
 		<script src = "js/fundo_mexeu.js"></script>
@@ -48,16 +49,20 @@
 				var credits = new SceneCredits();
 
 				var level01 = new SceneLevel();
+				
+				var level02 = new SceneLevel2();
 
 				var tuto = new SceneTutorial();
 				
 				var end = new End;
 				
-				var end_1 = new End1;
+				var end_1_0 = new End1;
+				
+				var end_1_1 = new End1;
 				
 				var end_2 = new End2;
 
-				var SCENES = { INTRO: 0, CREDITS: 1, LEVEL01: 2 , TUTORIAL: 3, END : 4, END1: 5, END2 : 6}
+				var SCENES = { INTRO: 0, CREDITS: 1, LEVEL01: 2, TUTORIAL: 3, END : 4, END1: 5, END2 : 6, LEVEL02 : 7, END3 : 8}
 
 				var currentScene = SCENES.INTRO;
 				
@@ -117,6 +122,12 @@
 						level01.update();
 					}
 					break;
+					
+					case SCENES.LEVEL02:
+					{
+						level02.update();
+					}
+					break;
 
 					case SCENES.TUTORIAL:
 					{
@@ -132,13 +143,19 @@
 					
 					case SCENES.END1:
 					{
-						end_1.update();
+						end_1_0.update();
 					}
 					break;
 					
 					case SCENES.END2:
 					{
 						end_2.update();
+					}
+					break;
+					
+					case SCENES.END3:
+					{
+						end_1_1.update();
 					}
 					break;
 					
@@ -170,6 +187,12 @@
 							level01.draw();
 						}
 						break;
+						
+						case SCENES.LEVEL02:
+						{
+							level02.draw();
+						}
+						break;
 							
 						case SCENES.TUTORIAL:
 						{
@@ -185,13 +208,19 @@
 						
 						case SCENES.END1:
 						{
-							end_1.draw();
+							end_1_0.draw();
 						}
 						break;
 						
 						case SCENES.END2:
 						{
 							end_2.draw();
+						}
+						break;
+						
+						case SCENES.END3:
+						{
+							end_1_1.draw();
 						}
 						break;
 
@@ -218,6 +247,13 @@
 						{
 							level01.mouse_move(mouse);
 						}
+						break;
+						
+						case SCENES.LEVEL02:
+						{
+							level02.mouse_move(mouse);
+						}
+						break;
 					}
 				}
 
@@ -250,6 +286,12 @@
 							level01.mouse_down(mouse);
 						}
 						break;
+						
+						case SCENES.LEVEL02:
+						{
+							level02.mouse_down(mouse);
+						}
+						break;
 
 						case SCENES.TUTORIAL:
 						{
@@ -265,13 +307,19 @@
 						
 						case SCENES.END1:
 						{
-							end_1.mouse_down(mouse);
+							end_1_0.mouse_down(mouse);
 						}
 						break;
 						
 						case SCENES.END2:
 						{
 							end_2.mouse_down(mouse);
+						}
+						break;
+						
+						case SCENES.END1_1:
+						{
+							end_1_1.mouse_down(mouse);
 						}
 						break;
 
