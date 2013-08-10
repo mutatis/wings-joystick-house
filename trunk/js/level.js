@@ -17,6 +17,7 @@ function SceneLevel()
 	this.tiro5 = new Tela_tiro("imgs/tiro5.png", 800, 600, 0, 0);
 	this.jh = new Botao("imgs/jh.png", 193, 62, 11, 1);
 	this.nw = new Botao("imgs/nw.png", 184, 64, 208, 1);
+	this.back = new Botao("imgs/back.png", 50, 50, 732, 12);
   	this.vida = 6;
 	this.balas = 15;
 	this.tiros = true;
@@ -51,6 +52,7 @@ function SceneLevel()
 		this.roda2.draw();
 		this.jh.draw();
 		this.nw.draw();
+		this.back.draw();
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#000000";
 		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);
@@ -97,6 +99,9 @@ function SceneLevel()
 			this.alvo1.pontos = 0; 
 			this.alvo2.pontos = 0;
 			this.alvo3.pontos = 0;
+			this.alvo1.mortes = 0;
+			this.alvo2.mortes = 0;
+			this.alvo3.mortes = 0;
 			this.vida = 6;
 		}
 		if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos >= 100)
@@ -105,6 +110,9 @@ function SceneLevel()
 			this.alvo1.pontos = 0; 
 			this.alvo2.pontos = 0;
 			this.alvo3.pontos = 0;
+			this.alvo1.mortes = 0;
+			this.alvo2.mortes = 0;
+			this.alvo3.mortes = 0;
 			this.vida = 6;
 		}
 		
@@ -149,6 +157,11 @@ function SceneLevel()
 		if(this.nw.clicado(mouse))
 		{
 			window.open("http://nwdesign.com.br");
+		}
+		
+		if(this.back.clicado(mouse))
+		{
+			currentScene = SCENES.INTRO;
 		}
 		
 		 
