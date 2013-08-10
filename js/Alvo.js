@@ -9,7 +9,7 @@ function Alvos(file, tamanho_w, tamanho_h)
         this.visible = true;
 		
 		this.posicao_x = Math.floor((Math.random()*(800-tamanho_w)+1));
-		this.posicao_y = Math.floor((Math.random()*(400-tamanho_h)+50));
+		this.posicao_y = Math.floor((Math.random()*(600-tamanho_h)+1));
 		this.tempo_visto = 100;
 		this.tempo_apagado = 100;
 		
@@ -65,12 +65,22 @@ function Alvos(file, tamanho_w, tamanho_h)
 			this.tempo_apagado = tempoSeg + Math.floor((Math.random()*150+101));
 			this.clico = false;
 		} 
-		if (tempoSeg > this.tempo_visto)
+		if(tempoSeg > this.tempo_visto)
 		{
 			this.visible = false;
 			this.posicao_x_dst = Math.floor((Math.random()*(800-this.tamanho_w_dst))+1);
-			this.posicao_y_dst = Math.floor((Math.random()*(400-this.tamanho_h_dst))+50);
-		}		
+			this.posicao_y_dst = Math.floor((Math.random()*(600-this.tamanho_h_dst))+1);
+		}
+			
+		if(this.posicao_y_dst <= 67)
+		{
+			this.posicao_y_dst = Math.floor((Math.random()*(600-tamanho_h)+1))
+		}
+		
+		if(this.posicao_y_dst >= 458)
+		{
+			this.posicao_y_dst = Math.floor((Math.random()*(600-tamanho_h)+1))
+		}
                 
         }//fecha update
         
