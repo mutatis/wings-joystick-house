@@ -31,6 +31,8 @@ function Alvos(file, tamanho_w, tamanho_h)
         this.posicao_y_src = 0;
 		
 		this.clico = false;
+		
+		this.mortes = 0;
         
         this.current_frame = 0;
         this.frames = 8;
@@ -53,6 +55,8 @@ function Alvos(file, tamanho_w, tamanho_h)
         {//abre update
 		
 			this.para1.update();
+			
+			this.mortes = this.para1.mortos;
 		
 		if(tempoSeg > this.tempo_apagado)
 		{

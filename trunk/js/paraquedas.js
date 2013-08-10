@@ -27,6 +27,8 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         
         this.posicao_x_src = 0;
         this.posicao_y_src = 0;
+		
+		this.mortos = 0;
         
         this.current_frame = 0;
         this.frames = 4;
@@ -112,6 +114,7 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 				{
 					this.visible = false;
 					this.clico = true;
+					this.mortos += 1;
 				}
 			}
 	
