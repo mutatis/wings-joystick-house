@@ -1,7 +1,7 @@
 function End()
 {
 
-	this.fundo_wins = new Fundo("imgs/perdeu.png", 0, 0);
+	this.fundo_wins = new Fundo("imgs/fundo_morreu.jpg", 0, 0);
 	this.jh = new Botao("imgs/jh.png", 193, 62, 11, 1);
 	this.nw = new Botao("imgs/nw.png", 184, 64, 208, 1);
 	

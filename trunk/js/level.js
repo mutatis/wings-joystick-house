@@ -101,6 +101,20 @@ function SceneLevel()
 			this.vida = 6;
 		}
 		
+		if(this.alvo1.mortes + this.alvo2.mortes + this.alvo3.mortes >= 5)
+		{
+			currentScene = SCENES.END2;
+			this.alvo1.pontos = 0; 
+			this.alvo2.pontos = 0;
+			this.alvo3.pontos = 0;
+			this.vida = 6;
+			this.alvo1.mortes = 0; 
+			this.alvo2.mortes = 0;
+			this.alvo3.mortes = 0;
+		}
+		
+		
+		
 	};//fecha draw
 	
 	this.mouse_move=function(mouse)
