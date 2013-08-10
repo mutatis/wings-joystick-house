@@ -161,6 +161,13 @@ function SceneLevel()
 		
 		if(this.back.clicado(mouse))
 		{
+			this.alvo1.pontos = 0; 
+			this.alvo2.pontos = 0;
+			this.alvo3.pontos = 0;
+			this.alvo1.mortes = 0;
+			this.alvo2.mortes = 0;
+			this.alvo3.mortes = 0;
+			this.vida = 6;
 			currentScene = SCENES.INTRO;
 		}
 		
