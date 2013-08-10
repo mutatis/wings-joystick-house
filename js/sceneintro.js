@@ -5,6 +5,7 @@ function SCENEIntro()
 	this.play = new Botao("imgs/play.png", 200, 100, 310, 415);
 	this.jh = new Botao("imgs/jh.png", 193, 62, 11, 1);
 	this.nw = new Botao("imgs/nw.png", 184, 64, 208, 1);
+	this.back = new Botao("imgs/back.png", 50, 50, 732, 12);
 	
 	this.update = function()
 	{//abre update
@@ -19,6 +20,7 @@ function SCENEIntro()
 		this.play.draw();
 		this.jh.draw();
 		this.nw.draw();
+		this.back.draw();
 	
 	}//fecha draw
 
