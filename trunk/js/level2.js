@@ -20,6 +20,8 @@ function SceneLevel2()
 	this.jh = new Botao("imgs/jh.png", 193, 62, 11, 1);
 	this.nw = new Botao("imgs/nw.png", 184, 64, 208, 1);
   	this.vida = 6;
+	this.balas = 30;
+	this.tiros = true;
   
 	this.update=function()
 	{//abre update
@@ -31,6 +33,11 @@ function SceneLevel2()
 		this.alvo5.Update();
 		this.fundo1.update();
 		this.mira.update();
+		
+		if(this.balas <= 0)
+		{
+			this.tiros = false;
+		}
 			
 	};//fecha update
   
@@ -150,11 +157,16 @@ function SceneLevel2()
 	this.mouse_down=function(mouse)
 	{//abre mouse down
 		
-		this.alvo1.mouse_down(mouse);
-		this.alvo2.mouse_down(mouse);
-		this.alvo3.mouse_down(mouse);
-		this.alvo4.mouse_down(mouse);
-		this.alvo5.mouse_down(mouse);
+		this.balas -= 1;
+		
+		if(this.tiros == true)
+		{
+			this.alvo1.mouse_down(mouse);
+			this.alvo2.mouse_down(mouse);
+			this.alvo3.mouse_down(mouse);
+			this.alvo4.mouse_down(mouse);
+			this.alvo5.mouse_down(mouse);
+		}
 		
 		if(this.jh.clicado(mouse))
 		{

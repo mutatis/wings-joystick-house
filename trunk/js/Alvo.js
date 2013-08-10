@@ -86,13 +86,10 @@ function Alvos(file, tamanho_w, tamanho_h)
         
         this.Draw = function()//funcao desenhar (draw)
         {//abre draw
-                
-                
-                //console.log("oioio");
-                
+                                
                 if(this.visible == true)
 				{
-               // console.log("oioio");
+             
                 screen.drawImage(this.img,
                                         this.tamanho_w_src*this.current_frame,
                                         this.posicao_y_src,
