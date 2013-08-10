@@ -115,7 +115,7 @@ function SceneLevel2()
 		}
 		if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos + this.alvo4.pontos + this.alvo5.pontos >= 200)
 		{
-			currentScene = SCENES.END1;
+			currentScene = SCENES.END3;
 			this.alvo1.pontos = 0; 
 			this.alvo2.pontos = 0;
 			this.alvo3.pontos = 0;
