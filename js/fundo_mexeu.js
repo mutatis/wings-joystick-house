@@ -9,8 +9,7 @@ function Fundo_move(file)
 	this.img.onload = function()
 	{
 		loaded = true; 
-		console.log("carregamento pela classe BACKGROUND" + loaded);
-	};
+	}
 	
 	this.size_x = 800;
     this.size_y = 1200;

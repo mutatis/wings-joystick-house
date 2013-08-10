@@ -8,10 +8,7 @@ function Fundo(file, pos_x, pos_y)
 
 	this.img.onload = function()
 	{
-
 		loaded = true;
-		console.log("carregou" + loaded);
-
 	}
 
 	this.tamanho_w = 800;

@@ -47,10 +47,7 @@ function Aviao(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         
         this.draw = function()//funcao desenhar (draw)
         {//abre draw
-                
-                
-                //console.log("oioio");
-                
+                           
                 if(this.visible)
                 screen.drawImage(this.img,
                                         this.tamanho_w_src*this.current_frame,

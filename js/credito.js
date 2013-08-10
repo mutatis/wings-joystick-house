@@ -18,9 +18,7 @@ function SceneCredits()
   
 	this.mouse_down=function(mouse)
 	{//abre mouse down
-  
-		console.log("CREDITS mouse X " + mouse.x + " mouse Y " + mouse.y );
-  
+    
 	};//fecha mouse down
   
   
