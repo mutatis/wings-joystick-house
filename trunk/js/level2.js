@@ -58,7 +58,7 @@ function SceneLevel2()
 		this.roda2.draw();
 		this.jh.draw();
 		this.nw.draw();
-		this.back.draw();s
+		this.back.draw();
 		screen.font = "50px Comic Sans MS";
 		screen.fillStyle = "#000000";
 		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos + this.alvo4.pontos + this.alvo5.pontos, 630, 515);
