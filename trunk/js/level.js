@@ -103,6 +103,8 @@ function SceneLevel()
 			this.alvo2.mortes = 0;
 			this.alvo3.mortes = 0;
 			this.vida = 6;
+			this.balas = 15;
+			this.tiros = true;
 		}
 		if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos >= 100)
 		{
@@ -114,6 +116,8 @@ function SceneLevel()
 			this.alvo2.mortes = 0;
 			this.alvo3.mortes = 0;
 			this.vida = 6;
+			this.balas = 15;
+			this.tiros = true;
 		}
 		
 		if(this.alvo1.mortes + this.alvo2.mortes + this.alvo3.mortes >= 5)
@@ -126,6 +130,8 @@ function SceneLevel()
 			this.alvo1.mortes = 0; 
 			this.alvo2.mortes = 0;
 			this.alvo3.mortes = 0;
+			this.balas = 15;
+			this.tiros = true;
 		}
 		
 		
@@ -168,6 +174,8 @@ function SceneLevel()
 			this.alvo2.mortes = 0;
 			this.alvo3.mortes = 0;
 			this.vida = 6;
+			this.balas = 15;
+			this.tiros = true;
 			currentScene = SCENES.INTRO;
 		}
 		
