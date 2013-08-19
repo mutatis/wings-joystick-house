@@ -1,4 +1,5 @@
-function End1(){
+function End1()
+{
 
 	this.fundo_lose = new Fundo("imgs/venceu.png", 0, 0);
 	this.jh = new Botao("imgs/jh.png", 193, 62, 11, 1);
