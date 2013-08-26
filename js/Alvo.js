@@ -1,8 +1,6 @@
 function Alvos(file, tamanho_w, tamanho_h)
 {//abre 
 
-		this.para1 = new Paraquedas("imgs/para_quedas.png", 100, 100, 0, 0);
-
         this.img = new Image();
         this.img.src = file;
         
@@ -31,8 +29,6 @@ function Alvos(file, tamanho_w, tamanho_h)
         this.posicao_y_src = 0;
 		
 		this.clico = false;
-		
-		this.mortes = 0;
         
         this.current_frame = 0;
         this.frames = 8;
@@ -53,16 +49,7 @@ function Alvos(file, tamanho_w, tamanho_h)
         
         this.Update = function()
         {//abre update
-		
-			this.para1.update();
-			
-			this.mortes = this.para1.mortos;
 
-			if(this.para1.mortos >= 5)
-			{
-				this.para1.mortos = 0;
-			}
-		
 		//verifica se o tempo em q o aviao esta invisivel se este tempo for menor q o tempoSeg ele aparece denovo
 		if(tempoSeg > this.tempo_apagado)
 		{
@@ -134,14 +121,11 @@ function Alvos(file, tamanho_w, tamanho_h)
                 
                 this.last_draw_time = Date.now();
 				}
-				
-				this.para1.draw();
-                
+				               
         }//fecha draw
 		
 		this.mouse_down = function(mouse)
 		{
-			this.para1.mouse_down(mouse);
 			//verifica a colicao do aviao.
 			if(Collide(mouse.x-10, mouse.y-11, 1, 1, this.posicao_x_dst, this.posicao_y_dst, this.tamanho_w_dst*this.scale_x, this.tamanho_h_dst*this.scale_y))	
 			{	
@@ -150,9 +134,6 @@ function Alvos(file, tamanho_w, tamanho_h)
 					this.pontos += 10;
 					this.visible = false;
 					this.clico = true;
-					this.para1.posicao_x_dst = this.posicao_x_dst;
-					this.para1.posicao_y_dst = this.posicao_y_dst;
-					this.para1.visible = true;
 				}
 				
 			}
