@@ -55,8 +55,9 @@ function SceneLevel()
 	this.draw = function()
 	{//abre draw
 		
-		this.fundo1.draw();
+		
 		this.fundo3.draw();
+		this.fundo1.draw();
 		for(var i = 0; i < this.aviao_list.length; i++)
 		{
 			this.aviao_list[i].Draw();
