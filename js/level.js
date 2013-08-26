@@ -36,29 +36,6 @@ function SceneLevel()
 		{
 			this.tiros = false;
 		}
-			
-	};//fecha update
-  
-	this.draw = function()
-	{//abre draw
-		
-		
-		this.fundo3.draw();
-		this.fundo1.draw();
-		this.alvo1.Draw();
-		this.alvo2.Draw();
-		this.alvo3.Draw();
-		this.mira.draw();
-		this.fundo2.draw();
-		this.roda.draw();
-		this.roda2.draw();
-		this.jh.draw();
-		this.nw.draw();
-		this.back.draw();
-		screen.font = "50px Comic Sans MS";
-		screen.fillStyle = "#000000";
-		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);	
-			//this.pontos = this.aviao_list[i].pontos;
 
 		if((this.alvo1.clico == false) && (this.alvo1.visible == false))
 		{
@@ -90,7 +67,7 @@ function SceneLevel()
 				this.balas = 15;
 				this.tiros = true;
 			}
-			if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos >= 200)
+			if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos >= 100)
 			{
 				currentScene = SCENES.END1;
 				this.alvo1.pontos = 0; 
@@ -117,27 +94,49 @@ function SceneLevel()
 				this.balas = 15;
 				this.tiros = true;
 			}
-			
-			if(this.vida == 5)
-			{
-				this.tiro1.draw();
-			}
-			if(this.vida == 4)
-			{
-				this.tiro2.draw()	
-			}
-			if(this.vida == 3)
-			{
-				this.tiro3.draw()	
-			}
-			if(this.vida == 2)
-			{
-				this.tiro4.draw()	
-			}
-			if(this.vida == 1)
-			{
-				this.tiro5.draw()	
-			}
+						
+	};//fecha update
+  
+	this.draw = function()
+	{//abre draw
+		
+		
+		this.fundo3.draw();
+		this.fundo1.draw();
+		this.alvo1.Draw();
+		this.alvo2.Draw();
+		this.alvo3.Draw();
+		this.mira.draw();
+		this.fundo2.draw();
+		this.roda.draw();
+		this.roda2.draw();
+		this.jh.draw();
+		this.nw.draw();
+		this.back.draw();
+		screen.font = "50px Comic Sans MS";
+		screen.fillStyle = "#000000";
+		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos, 630, 515);	
+		if(this.vida == 5)
+		{
+			this.tiro1.draw();
+		}
+		if(this.vida == 4)
+		{
+			this.tiro2.draw()	
+		}
+		if(this.vida == 3)
+		{
+			this.tiro3.draw()	
+		}
+		if(this.vida == 2)
+		{
+			this.tiro4.draw()	
+		}
+		if(this.vida == 1)
+		{
+			this.tiro5.draw()	
+		}
+		
 	};//fecha draw
 	
 	this.mouse_move=function(mouse)
