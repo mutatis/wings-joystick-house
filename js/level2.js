@@ -86,10 +86,10 @@ function SceneLevel2()
 			this.alvo4.clico = true;
 		}
 		
-		if((this.alvo4.clico == false) && (this.alvo4.visible == false))
+		if((this.alvo5.clico == false) && (this.alvo5.visible == false))
 		{
 			this.vida += -1;
-			this.alvo4.clico = true;
+			this.alvo5.clico = true;
 		}
 		
 		if(this.vida == 5)
