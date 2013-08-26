@@ -20,15 +20,15 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.tamanho_w_dst = 300;
         this.tamanho_h_dst = 300;
 		
-		this.clico = false;
+	this.clico = false;
 		
-		this.velocidade_x = 5;
-		this.velocidade_y = 2;
+	this.velocidade_x = 5;
+	this.velocidade_y = 2;
         
         this.posicao_x_src = 0;
         this.posicao_y_src = 0;
 		
-		this.mortos = 0;
+	this.mortos = 0;
         
         this.current_frame = 0;
         this.frames = 4;
