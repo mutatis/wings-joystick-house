@@ -82,10 +82,10 @@ function SceneLevel()
 		
 		
 		this.fundo3.draw();
-		this.fundo1.draw();
 		this.alvo1.Draw();
 		this.alvo2.Draw();
 		this.alvo3.Draw();
+		this.fundo1.draw();
 		this.mira.draw();
 		this.fundo2.draw();
 		this.roda.draw();
