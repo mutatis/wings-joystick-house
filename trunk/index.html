@@ -24,7 +24,6 @@
 		<script src = "js/tela_tiro.js"></script>
 		<script src = "js/end.js"></script>
 		<script src = "js/end1.js"></script>
-		<script src = "js/end2.js"></script>
 		<script src = "js/end1_1.js"></script>
 		<script src = "js/paraquedas.js"></script>
 		
@@ -61,9 +60,7 @@
 				
 				var end_1_1 = new End1_1;
 				
-				var end_2 = new End2;
-
-				var SCENES = { INTRO: 0, CREDITS: 1, LEVEL01: 2, TUTORIAL: 3, END : 4, END1: 5, END2 : 6, LEVEL02 : 7, END3 : 8}
+				var SCENES = { INTRO: 0, CREDITS: 1, LEVEL01: 2, TUTORIAL: 3, END : 4, END1: 5, LEVEL02 : 7, END3 : 8}
 
 				var currentScene = SCENES.INTRO;
 				
@@ -147,13 +144,7 @@
 						end_1_0.update();
 					}
 					break;
-					
-					case SCENES.END2:
-					{
-						end_2.update();
-					}
-					break;
-					
+									
 					case SCENES.END3:
 					{
 						end_1_1.update();
@@ -210,12 +201,6 @@
 						case SCENES.END1:
 						{
 							end_1_0.draw();
-						}
-						break;
-						
-						case SCENES.END2:
-						{
-							end_2.draw();
 						}
 						break;
 						
@@ -309,13 +294,7 @@
 							end_1_0.mouse_down(mouse);
 						}
 						break;
-						
-						case SCENES.END2:
-						{
-							end_2.mouse_down(mouse);
-						}
-						break;
-						
+			
 						case SCENES.END3:
 						{
 							end_1_1.mouse_down(mouse);
