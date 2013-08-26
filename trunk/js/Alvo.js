@@ -142,7 +142,7 @@ function Alvos(file, tamanho_w, tamanho_h)
 			{	
 				if(this.visible) 
 				{
-					this.pontos+=10;
+					this.pontos += 10;
 					this.visible = false;
 					this.clico = true;
 					this.para1.posicao_x_dst = this.posicao_x_dst;
