@@ -22,6 +22,11 @@ function SceneLevel()
 	this.balas = 15;
 	this.tiros = true;
 	this.aviao_list = new Array();
+
+	this.Aviao = function()
+	{
+		
+	}
   
 	this.update=function()
 	{//abre update
