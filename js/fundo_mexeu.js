@@ -1,4 +1,3 @@
-//background.js
 function Fundo_move(file)
 {
 	this.img = new Image();
@@ -16,7 +15,7 @@ function Fundo_move(file)
     this.position_x = 0;
     this.position_y = 0;
     this.velocity_x = 0;
-    this.velocity_y = -2;
+    this.velocity_y = -0.5;
     this.velocity_MAX = 15;
     
     this.update=function()
@@ -28,7 +27,7 @@ function Fundo_move(file)
     	
     	if(this.position_y <= -600)
     	{
-    		this.position_y = 0;
+    		this.position_y = -600;
     	}
     	
     };
