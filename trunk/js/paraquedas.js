@@ -50,15 +50,20 @@ function Paraquedas(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.update = function()
         {//abre update
 			
-			if(this.visible == true)
-			{
-				this.posicao_y_dst += this.velocidade_y
-			}
-			
-			if(this.posicao_x_dst >= SCREEN_HEIGHT)
-			{
-				this.visible = false;
-			}
+		if(this.visible == true)
+		{
+		      this.posicao_y_dst += this.velocidade_y
+		}
+		
+		if(this.posicao_x_dst >= SCREEN_HEIGHT)
+		{
+	               this.visible = false;
+		}
+
+                if(this.mortos >= 5)
+                {
+                        this.mortos = 0;
+                }
                 
         }//fecha update
         

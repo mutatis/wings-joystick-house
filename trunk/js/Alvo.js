@@ -57,6 +57,11 @@ function Alvos(file, tamanho_w, tamanho_h)
 			this.para1.update();
 			
 			this.mortes = this.para1.mortos;
+
+			if(this.para1.mortos >= 5)
+			{
+				this.para1.mortos = 0;
+			}
 		
 		//verifica se o tempo em q o aviao esta invisivel se este tempo for menor q o tempoSeg ele aparece denovo
 		if(tempoSeg > this.tempo_apagado)
