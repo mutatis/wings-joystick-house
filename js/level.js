@@ -25,7 +25,7 @@ function SceneLevel()
 
 	this.Aviao = function()
 	{
-		
+
 	}
   
 	this.update=function()
