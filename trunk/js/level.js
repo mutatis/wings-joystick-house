@@ -21,13 +21,7 @@ function SceneLevel()
   	this.vida = 6;
 	this.balas = 15;
 	this.tiros = true;
-	this.aviao_list = new Array();
 
-	this.Aviao = function()
-	{
-
-	}
-  
 	this.update=function()
 	{//abre update
 		tempoSeg++
@@ -83,9 +77,7 @@ function SceneLevel()
 	};//fecha update
   
 	this.draw = function()
-	{//abre draw
-		
-		
+	{//abre draw	
 		this.fundo3.draw();
 		this.alvo1.Draw();
 		this.alvo2.Draw();
