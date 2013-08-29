@@ -7,6 +7,7 @@ function SceneLevel()
 	this.fundo1 = new Fundo_move("imgs/background.png")
 	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
+	this.fundo4 = new Fundo("imgs/terra2.png", 0, 0)
 	this.roda = new Aviao ("imgs/roda.png", 107, 112, 155, 490);
 	this.roda2 = new Radar("imgs/radar.png", 183, 182, 14, 427);
 	this.mira = new Mira("imgs/alvo_mouse.png");
@@ -85,6 +86,7 @@ function SceneLevel()
 		this.fundo1.draw();
 		this.mira.draw();
 		this.fundo2.draw();
+		
 		this.roda.draw();
 		this.roda2.draw();
 		this.jh.draw();
