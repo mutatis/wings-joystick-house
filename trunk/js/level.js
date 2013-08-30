@@ -1,9 +1,9 @@
 function SceneLevel()
 {//abre level
 
-	this.alvo1 = new Alvos("imgs/alvo.png", 430, 101);
-	this.alvo2 = new Alvos("imgs/alvo.png", 430, 101);
-	this.alvo3 = new Alvos("imgs/alvo.png", 430, 101);
+	this.alvo1 = new Alvos("imgs/alvo1.png", 430, 101);
+	this.alvo2 = new Alvos("imgs/alvo1.png", 430, 101);
+	this.alvo3 = new Alvos("imgs/alvo1.png", 430, 101);
 	this.fundo1 = new Fundo_move("imgs/background.png")
 	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
@@ -132,25 +132,28 @@ function SceneLevel()
 		this.alvo2.mouse_down(mouse);
 		this.alvo3.mouse_down(mouse);
 
-		 if(this.jh.clicado(mouse))
-			{
-				window.open("http://www.facebook.com/JoystickHouse");
-			}
-			
-			if(this.nw.clicado(mouse))
-			{
-				window.open("http://nwdesign.com.br");
-			}
-			
-			if(this.back.clicado(mouse))
-			{
-				this.alvo1.pontos = 0; 
-				this.alvo2.pontos = 0;
-				this.alvo3.pontos = 0;
-				this.vida = 6;
-				this.balas = 15;
-				this.tiros = true;
-				currentScene = SCENES.INTRO;
+		if(this.tiros)
+		{
+			 if(this.jh.clicado(mouse))
+				{
+					window.open("http://www.facebook.com/JoystickHouse");
+				}
+				
+				if(this.nw.clicado(mouse))
+				{
+					window.open("http://nwdesign.com.br");
+				}
+				
+				if(this.back.clicado(mouse))
+				{
+					this.alvo1.pontos = 0; 
+					this.alvo2.pontos = 0;
+					this.alvo3.pontos = 0;
+					this.vida = 6;
+					this.balas = 15;
+					this.tiros = true;
+					currentScene = SCENES.INTRO;
+				}
 			}
 	};//fecha mouse down
 	  

@@ -1,14 +1,14 @@
 function SceneLevel2()
 {//abre level
 
-	this.alvo1 = new Alvos("imgs/alvo.png", 430, 101);
-	this.alvo2 = new Alvos("imgs/alvo.png", 430, 101);
-	this.alvo3 = new Alvos("imgs/alvo.png", 430, 101);
-	this.alvo4 = new Alvos("imgs/alvo.png", 430, 101);
-	this.alvo5 = new Alvos("imgs/alvo.png", 430, 101);
+	this.alvo1 = new Alvos("imgs/alvo1.png", 430, 101);
+	this.alvo2 = new Alvos("imgs/alvo1.png", 430, 101);
+	this.alvo3 = new Alvos("imgs/alvo1.png", 430, 101);
+	this.alvo4 = new Alvos("imgs/alvo1.png", 430, 101);
 	this.fundo1 = new Fundo_move("imgs/background.png")
 	this.fundo2 = new Fundo("imgs/tela_controler.png", 0, 0)
 	this.fundo3 = new Fundo("imgs/terra.png", 0, 0)
+	this.fundo4 = new Fundo("imgs/terra2.png", 0, 0)
 	this.roda = new Aviao ("imgs/roda.png", 107, 112, 155, 490);
 	this.roda2 = new Radar("imgs/radar.png", 183, 182, 14, 427);
 	this.mira = new Mira("imgs/alvo_mouse.png");
@@ -21,9 +21,9 @@ function SceneLevel2()
 	this.nw = new Botao("imgs/nw.png", 184, 64, 208, 1);
 	this.back = new Botao("imgs/back.png", 50, 50, 732, 12);
   	this.vida = 6;
-	this.balas = 30;
+	this.balas = 25;
 	this.tiros = true;
-  
+
 	this.update=function()
 	{//abre update
 		tempoSeg++
@@ -31,7 +31,6 @@ function SceneLevel2()
 		this.alvo2.Update();
 		this.alvo3.Update();
 		this.alvo4.Update();
-		this.alvo5.Update();
 		this.fundo1.update();
 		this.mira.update();
 		
@@ -39,29 +38,7 @@ function SceneLevel2()
 		{
 			this.tiros = false;
 		}
-			
-	};//fecha update
-  
-	this.draw = function()
-	{//abre draw
-		
-		this.fundo1.draw();
-		this.fundo3.draw();
-		this.alvo1.Draw();
-		this.alvo2.Draw();
-		this.alvo3.Draw();
-		this.alvo4.Draw();
-		this.alvo5.Draw();
-		this.mira.draw();
-		this.fundo2.draw();
-		this.roda.draw();
-		this.roda2.draw();
-		this.jh.draw();
-		this.nw.draw();
-		this.back.draw();
-		screen.font = "50px Comic Sans MS";
-		screen.fillStyle = "#000000";
-		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos + this.alvo4.pontos + this.alvo5.pontos, 630, 515);
+
 		if((this.alvo1.clico == false) && (this.alvo1.visible == false))
 		{
 			this.vida += -1;
@@ -79,19 +56,56 @@ function SceneLevel2()
 			this.vida += -1;
 			this.alvo3.clico = true;
 		}
-		
+
 		if((this.alvo4.clico == false) && (this.alvo4.visible == false))
 		{
 			this.vida += -1;
 			this.alvo4.clico = true;
 		}
+			if(this.vida <= 0)
+			{
+				currentScene = SCENES.END;
+				this.alvo1.pontos = 0; 
+				this.alvo2.pontos = 0;
+				this.alvo3.pontos = 0;
+				this.alvo4.pontos = 0;
+				this.vida = 6;
+				this.balas = 15;
+				this.tiros = true;
+			}
+			if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos + this.alvo4.pontos >= 200)
+			{
+				currentScene = SCENES.INTRO;
+				this.alvo1.pontos = 0; 
+				this.alvo2.pontos = 0;
+				this.alvo3.pontos = 0;
+				this.alvo4.pontos = 0;
+				this.vida = 6;
+				this.balas = 15;
+				this.tiros = true;
+			}
+						
+	};//fecha update
+  
+	this.draw = function()
+	{//abre draw	
+		this.fundo3.draw();
+		this.alvo1.Draw();
+		this.alvo2.Draw();
+		this.alvo3.Draw();
+		this.alvo4.Draw();
+		this.fundo1.draw();
+		this.mira.draw();
+		this.fundo2.draw();
 		
-		if((this.alvo5.clico == false) && (this.alvo5.visible == false))
-		{
-			this.vida += -1;
-			this.alvo5.clico = true;
-		}
-		
+		this.roda.draw();
+		this.roda2.draw();
+		this.jh.draw();
+		this.nw.draw();
+		this.back.draw();
+		screen.font = "50px Comic Sans MS";
+		screen.fillStyle = "#000000";
+		screen.fillText(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos + this.alvo4.pontos, 630, 515);	
 		if(this.vida == 5)
 		{
 			this.tiro1.draw();
@@ -112,58 +126,6 @@ function SceneLevel2()
 		{
 			this.tiro5.draw()	
 		}
-		if(this.vida <= 0)
-		{
-			currentScene = SCENES.END;
-			this.alvo1.pontos = 0; 
-			this.alvo2.pontos = 0;
-			this.alvo3.pontos = 0;
-			this.alvo4.pontos = 0;
-			this.alvo5.pontos = 0;
-			this.alvo1.mortes = 0;
-			this.alvo2.mortes = 0;
-			this.alvo3.mortes = 0;
-			this.alvo4.mortes = 0;
-			this.alvo5.mortes = 0;
-			this.vida = 6;
-			this.balas = 30;
-			this.tiros = true;
-		}
-		if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos + this.alvo4.pontos + this.alvo5.pontos >= 200)
-		{
-			currentScene = SCENES.END3;
-			this.alvo1.pontos = 0; 
-			this.alvo2.pontos = 0;
-			this.alvo3.pontos = 0;
-			this.alvo4.pontos = 0;
-			this.alvo5.pontos = 0;
-			this.alvo1.mortes = 0;
-			this.alvo2.mortes = 0;
-			this.alvo3.mortes = 0;
-			this.alvo4.mortes = 0;
-			this.alvo5.mortes = 0;
-			this.vida = 6;
-			this.balas = 30;
-			this.tiros = true;
-		}
-		
-		if(this.alvo1.mortes + this.alvo2.mortes + this.alvo3.mortes + this.alvo4.mortes + this.alvo5.mortes >= 5)
-		{
-			currentScene = SCENES.END2;
-			this.alvo1.pontos = 0; 
-			this.alvo2.pontos = 0;
-			this.alvo3.pontos = 0;
-			this.vida = 6;
-			this.alvo1.mortes = 0; 
-			this.alvo2.mortes = 0;
-			this.alvo3.mortes = 0;
-			this.alvo4.mortes = 0;
-			this.alvo5.mortes = 0;
-			this.balas = 30;
-			this.tiros = true;
-		}
-		
-		
 		
 	};//fecha draw
 	
@@ -176,42 +138,37 @@ function SceneLevel2()
 	{//abre mouse down
 		
 		this.balas -= 1;
-		
-		if(this.tiros == true)
+
+		if(this.tiros)
 		{
+		
 			this.alvo1.mouse_down(mouse);
 			this.alvo2.mouse_down(mouse);
 			this.alvo3.mouse_down(mouse);
 			this.alvo4.mouse_down(mouse);
-			this.alvo5.mouse_down(mouse);
-		}
-		
-		if(this.jh.clicado(mouse))
-		{
-			window.open("http://www.facebook.com/JoystickHouse");
-		}
-		
-		if(this.nw.clicado(mouse))
-		{
-			window.open("http://nwdesign.com.br");
-		}
-		
-		if(this.back.clicado(mouse))
-		{
-			this.alvo1.pontos = 0; 
-			this.alvo2.pontos = 0;
-			this.alvo3.pontos = 0;
-			this.vida = 6;
-			this.alvo1.mortes = 0; 
-			this.alvo2.mortes = 0;
-			this.alvo3.mortes = 0;
-			this.alvo4.mortes = 0;
-			this.alvo5.mortes = 0;
-			this.balas = 30;
-			this.tiros = true;
-			currentScene = SCENES.INTRO
-		}
-		 
+
+			 if(this.jh.clicado(mouse))
+				{
+					window.open("http://www.facebook.com/JoystickHouse");
+				}
+				
+				if(this.nw.clicado(mouse))
+				{
+					window.open("http://nwdesign.com.br");
+				}
+				
+				if(this.back.clicado(mouse))
+				{
+					this.alvo1.pontos = 0; 
+					this.alvo2.pontos = 0;
+					this.alvo3.pontos = 0;
+					this.alvo4.pontos = 0;
+					this.vida = 6;
+					this.balas = 15;
+					this.tiros = true;
+					currentScene = SCENES.INTRO;
+				}
+			}
 	};//fecha mouse down
 	  
 	this.key_down=function(key)

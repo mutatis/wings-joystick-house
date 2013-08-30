@@ -57,6 +57,7 @@ function Alvos(file, tamanho_w, tamanho_h)
 			this.tempo_visto = tempoSeg + Math.floor((Math.random()*100+50));
 			this.tempo_apagado = tempoSeg + Math.floor((Math.random()*150+101));
 			this.clico = false;
+                        this.posicao_y_src = 0;
 		} 
 		//verifica se o tempo em q o aviao esta visivel se este tempo for menor q o tempoSeg ele some
 		if(tempoSeg > this.tempo_visto)
@@ -64,6 +65,7 @@ function Alvos(file, tamanho_w, tamanho_h)
 			this.visible = false;
 			this.posicao_x_dst = Math.floor((Math.random()*(800-this.tamanho_w_dst))+1);
 			this.posicao_y_dst = Math.floor((Math.random()*(600-this.tamanho_h_dst))+1);
+                        this.posicao_y_src = 0;
 		}
 		
 		//verifica a posicao y do aviao	em cima
@@ -77,6 +79,7 @@ function Alvos(file, tamanho_w, tamanho_h)
 		{
 			this.posicao_y_dst = Math.floor((Math.random()*(600-tamanho_h)+1))
 		}
+
                 
         }//fecha update
         
@@ -132,7 +135,7 @@ function Alvos(file, tamanho_w, tamanho_h)
 				if(this.visible) 
 				{
 					this.pontos += 10;
-					this.visible = false;
+					this.posicao_y_src = 101;
 					this.clico = true;
 				}
 				
