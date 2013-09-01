@@ -70,7 +70,7 @@ function SceneLevel2()
 				this.alvo3.pontos = 0;
 				this.alvo4.pontos = 0;
 				this.vida = 6;
-				this.balas = 15;
+				this.balas = 25;
 				this.tiros = true;
 			}
 			if(this.alvo1.pontos + this.alvo2.pontos + this.alvo3.pontos + this.alvo4.pontos >= 200)
@@ -81,7 +81,7 @@ function SceneLevel2()
 				this.alvo3.pontos = 0;
 				this.alvo4.pontos = 0;
 				this.vida = 6;
-				this.balas = 15;
+				this.balas = 25;
 				this.tiros = true;
 			}
 						
@@ -146,29 +146,28 @@ function SceneLevel2()
 			this.alvo2.mouse_down(mouse);
 			this.alvo3.mouse_down(mouse);
 			this.alvo4.mouse_down(mouse);
-
-			 if(this.jh.clicado(mouse))
-				{
-					window.open("http://www.facebook.com/JoystickHouse");
-				}
+		}
+		if(this.jh.clicado(mouse))
+		{
+			window.open("http://www.facebook.com/JoystickHouse");
+		}
 				
-				if(this.nw.clicado(mouse))
-				{
-					window.open("http://nwdesign.com.br");
-				}
+		if(this.nw.clicado(mouse))
+		{
+			window.open("http://nwdesign.com.br");
+		}
 				
-				if(this.back.clicado(mouse))
-				{
-					this.alvo1.pontos = 0; 
-					this.alvo2.pontos = 0;
-					this.alvo3.pontos = 0;
-					this.alvo4.pontos = 0;
-					this.vida = 6;
-					this.balas = 15;
-					this.tiros = true;
-					currentScene = SCENES.INTRO;
-				}
-			}
+		if(this.back.clicado(mouse))
+		{
+			this.alvo1.pontos = 0; 
+			this.alvo2.pontos = 0;
+			this.alvo3.pontos = 0;
+			this.alvo4.pontos = 0;
+			this.vida = 6;
+			this.balas = 25;
+			this.tiros = true;
+			currentScene = SCENES.INTRO;
+		}
 	};//fecha mouse down
 	  
 	this.key_down=function(key)
