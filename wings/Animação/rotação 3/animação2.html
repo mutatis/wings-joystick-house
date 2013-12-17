@@ -1,0 +1,83 @@
+<! DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<title>
+
+       Rotação
+
+</title>
+
+        <script src = "aviao.js"></script>
+
+</head>
+
+<body>
+
+        Moeda fall
+        
+        <br/>
+        
+        <canvas width="800" height="600" id="main" style="border:3px solid #000000;">
+        
+        </canvas>
+        
+<script>
+        
+var canvas = document.getElementById("main");
+var screen = canvas.getContext("2d");
+
+SCREEN_WIDTH = 800;
+
+SCREEN_HEIGHT = 600;
+
+var moeda1 = new Aviao("para_quedas.png", 100 , 100, 200, 200);
+
+Load();
+function Load()
+{//abre Load
+        
+        Loop();
+        
+}//fecha Load
+
+function clear()
+{//abre clear
+
+        screen.clearRect(0, 0, 800, 600);
+
+}//fecha clear
+
+function Update()
+{//abre Update
+
+        moeda1.update();       
+
+}//fecha Update
+
+function Draw()
+{//abre draw
+        clear();
+        moeda1.draw();
+        
+        //screen.drawImage(moeda1.img, moeda1.posicao_x, moeda1.posicao_y, moeda1.tamanho_w, moeda1.tamanho_h);
+        
+}//fecha draw
+
+function Loop()
+{//abre Loop
+        
+        Update();
+        
+        Draw();
+        
+        setTimeout(Loop, 30);
+        
+}//fecha Loop
+</script>
+
+</body>
+
+</html>
